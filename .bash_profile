@@ -42,14 +42,9 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-if [[ -d $HOME/.rbenv ]]; then
-	export PATH="$HOME/.rbenv/bin:$PATH"
-	eval "$(rbenv init -)"
-fi
-
-export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 export EDITOR="vim"
-export NODE_BIN="/usr/local/share/npm/bin"
+export NODE_BIN="$HOME/.node/bin"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
 export RACK_ENV="development"
 export SENCHA_CMD_3_0_0="/usr/local/bin/Sencha/Cmd/3.1.0.256"
@@ -76,3 +71,10 @@ export PATH="/usr/local/bin/Sencha/Cmd/3.1.0.256:$PATH"
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH="/usr/local/heroku:/usr/local/heroku/bin:$PATH"
 export PATH="/Applications/Android Studio.app/sdk/platform-tools:$PATH"
+export PATH="$HOME/.node/bin:$PATH"
+
+## #Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
