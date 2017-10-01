@@ -42,12 +42,11 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 export EDITOR="vim"
 export NODE_BIN="$HOME/.node/bin"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
 export RACK_ENV="development"
-export SENCHA_CMD_3_0_0="/usr/local/bin/Sencha/Cmd/3.1.0.256"
 
 export DB_HOST="localhost"
 export DB_USER="root"
@@ -67,8 +66,6 @@ PS1="\n\u:\w \[$EGREEN\]\$(vcprompt)\[$NO_COLOR\] \n--> "
 export PATH="~/bin/:/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$NODE_BIN:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="/usr/local/bin/Sencha/Cmd/3.1.0.256:$PATH"
-export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH="/usr/local/heroku:/usr/local/heroku/bin:$PATH"
 export PATH="/Applications/Android Studio.app/sdk/platform-tools:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
