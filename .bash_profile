@@ -1,5 +1,8 @@
+if [ -f '~/.profile' ]; then
+   source ~/.profile
+fi
+
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
-# misc
 NO_COLOR='\e[0m' #disable any colors
 
 # regular colors
@@ -42,6 +45,7 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
+
 #export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 export EDITOR="vim"
 export NODE_BIN="$HOME/.node/bin"
@@ -72,6 +76,12 @@ export PATH="$HOME/.node/bin:$PATH"
 
 ## #Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
 eval "$(rbenv init -)"
+
+
