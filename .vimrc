@@ -6,7 +6,7 @@ syntax on
 color xoria256
 
 set number
-set wrap
+set nowrap
 set linebreak
 set ruler
 set showmatch  
@@ -26,8 +26,8 @@ set foldopen=block,hor,mark,percent,quickfix,tag
 set sidescrolloff=2
 set numberwidth=2
 set softtabstop=2
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set noexpandtab
 set mouse=a
 set ttyfast
@@ -39,6 +39,19 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 set clipboard=unnamed
 set pastetoggle=<F2>
+set shiftround
+set lazyredraw
+set complete-=i
+set cursorline
+set noerrorbells
+set visualbell
+set title
+set background=dark
+set foldmethod=indent
+set nospell
+set wildmenu
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
 
 if has('persistent_undo')
 	set noundofile
@@ -51,8 +64,22 @@ if exists(":Tabularize")
 	vmap <Leader>::: :Tabularize /:\zs<CR>
 endif
 
+
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 :highlight Search cterm=underline gui=underline ctermbg=none guibg=none ctermfg=none guifg=none
+
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+noremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" open omni completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+            \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+" open user completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+            \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
 
 let mapleader = ","
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
@@ -91,5 +118,23 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd vimenter * NERDTree
 autocmd FileType html,css EmmetInstall
 
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  autocmd FileType vue AutoFormatBuffer prettier
+  autocmd FileType js,jsx AutoFormatBuffer prettier
+augroup END
 
 
+
+" Keep all folds open when a file is opened
+augroup OpenAllFoldsOnFileOpen
+    autocmd!
+    autocmd BufRead * normal zR
+augroup END
