@@ -82,11 +82,12 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+export PATH="/Users/mkober/.rbenv/shims:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:/Users/mkober/.rbenv/bin:/usr/local/heroku/bin:/Users/mkober/.node/bin:/Applications/Android Studio.app/sdk/platform-tools:/usr/local/heroku:/usr/local/heroku/bin:/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home/bin:/Users/mkober/.node/bin:~/bin/:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/mkober/.rbenv/shims:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:/Users/mkober/.rbenv/bin:/usr/local/heroku/bin:/Users/mkober/.node/bin:/Applications/Android Studio.app/sdk/platform-tools:/usr/local/heroku:/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home/bin:~/bin/:/usr/local/sbin:/Users/mkober/.vimpkg/bin"
+
 eval "$(rbenv init -)"
 
 
-
-export PATH="/Users/mkober/.rbenv/shims:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:/Users/mkober/.rbenv/bin:/usr/local/heroku/bin:/Users/mkober/.node/bin:/Applications/Android Studio.app/sdk/platform-tools:/usr/local/heroku:/usr/local/heroku/bin:/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home/bin:/Users/mkober/.node/bin:~/bin/:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/mkober/.rbenv/shims:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/curl/bin:/usr/local/opt/openssl/bin:/Users/mkober/.rbenv/bin:/usr/local/heroku/bin:/Users/mkober/.node/bin:/Applications/Android Studio.app/sdk/platform-tools:/usr/local/heroku:/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home/bin:~/bin/:/usr/local/sbin:/Users/mkober/.vimpkg/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mkober/google-cloud-sdk/path.bash.inc' ]; then . '/Users/mkober/google-cloud-sdk/path.bash.inc'; fi

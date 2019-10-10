@@ -20,12 +20,15 @@ set ignorecase
 set smartcase 
 set smartindent
 set autoindent
-set foldmethod=manual 
-set foldlevel=2      
+
+" Controlling the coding folding
+set foldmethod=indent
 set foldopen=block,hor,mark,percent,quickfix,tag 
+set foldlevel=99
+
 set sidescrolloff=2
 set numberwidth=2
-set softtabstop=2
+set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set noexpandtab
@@ -47,7 +50,6 @@ set noerrorbells
 set visualbell
 set title
 set background=dark
-set foldmethod=indent
 set nospell
 set wildmenu
 set omnifunc=syntaxcomplete#Complete
@@ -87,10 +89,14 @@ let g:CommandTMaxHeight=20
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 let g:JSLintHighlightErrorLine = 0
-let g:user_emmet_install_global = 0
 let g:UltiSnipsSnippetsDir="~/.vim/snips"
 let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
+
+let g:prettier#config#tab_width = 4
+let g:prettier#config#jsx_bracket_same_line = 'true'
+let g:prettier#config#parser = 'flow'
+let g:prettier#config#print_width = 80
 
 nmap <silent> <leader>/ :nohlsearch<CR>
 nmap <Leader>tt :TagbarToggle<CR>
@@ -119,16 +125,16 @@ autocmd vimenter * NERDTree
 autocmd FileType html,css EmmetInstall
 
 augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-  autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer yapf
-  autocmd FileType vue AutoFormatBuffer prettier
-  autocmd FileType js,jsx AutoFormatBuffer prettier
+  "autocmd FileType bzl AutoFormatBuffer buildifier
+  "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  "autocmd FileType dart AutoFormatBuffer dartfmt
+  "autocmd FileType go AutoFormatBuffer gofmt
+  "autocmd FileType gn AutoFormatBuffer gn
+  "autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  "autocmd FileType java AutoFormatBuffer google-java-format
+  "autocmd FileType python AutoFormatBuffer yapf
+  "autocmd FileType vue AutoFormatBuffer prettier
+  "autocmd FileType js,jsx AutoFormatBuffer prettier
 augroup END
 
 
