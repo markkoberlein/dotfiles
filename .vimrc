@@ -6,7 +6,7 @@ syntax on
 color xoria256
 
 set number
-set nowrap
+set wrap
 set linebreak
 set ruler
 set showmatch  
