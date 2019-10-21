@@ -68,7 +68,7 @@ endif
 
 
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-:highlight Search cterm=underline gui=underline ctermbg=none guibg=none ctermfg=none guifg=none
+:highlight Search cterm=underline gui=underline
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 noremap <expr> <C-n> pumvisible() ? '<C-n>' :
