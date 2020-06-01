@@ -3,6 +3,10 @@ execute pathogen#helptags()
 
 filetype plugin indent on
 syntax on
+
+if !has('nvim')
+endif
+
 color xoria256
 
 set number
